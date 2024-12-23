@@ -399,3 +399,11 @@ pre {
 .copyable {
   user-select: text;
 }
+
+.chat-message-user {
+  background-color: var(--user-message-bg);
+}
+
+.chat-message {
+  background-color: var(--robot-message-bg);
+}
