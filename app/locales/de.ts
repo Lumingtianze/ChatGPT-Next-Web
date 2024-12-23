@@ -1,21 +1,18 @@
 import { SubmitKey } from "../store/config";
 import type { PartialLocaleType } from "./index";
 import { getClientConfig } from "../config/client";
-import { SAAS_CHAT_UTM_URL } from "@/app/constant";
 const isApp = !!getClientConfig()?.isApp;
 
 const de: PartialLocaleType = {
   WIP: "In Bearbeitung...",
   Error: {
     Unauthorized: isApp
-      ? `😆 Das Gespräch hatte einige Probleme, keine Sorge:
-    \\ 1️⃣ Wenn du ohne Konfiguration sofort starten möchtest, [klicke hier, um sofort zu chatten 🚀](${SAAS_CHAT_UTM_URL})
-    \\ 2️⃣ Wenn du deine eigenen OpenAI-Ressourcen verwenden möchtest, klicke [hier](/#/settings), um die Einstellungen zu ändern ⚙️`
-      : `😆 Das Gespräch hatte einige Probleme, keine Sorge:
-    \ 1️⃣ Wenn du ohne Konfiguration sofort starten möchtest, [klicke hier, um sofort zu chatten 🚀](${SAAS_CHAT_UTM_URL})
-    \ 2️⃣ Wenn du eine private Bereitstellung verwendest, klicke [hier](/#/auth), um den Zugriffsschlüssel einzugeben 🔑
-    \ 3️⃣ Wenn du deine eigenen OpenAI-Ressourcen verwenden möchtest, klicke [hier](/#/settings), um die Einstellungen zu ändern ⚙️
- `,
+    ? `😆 Das Gespräch ist auf einige Probleme gestoßen, keine Panik:
+    \\ 1️⃣ Wenn Sie Ihre eigenen OpenAI-Ressourcen nutzen möchten, klicken Sie [hier](/#/settings), um die Einstellungen zu ändern ⚙️`
+   : `😆 Das Gespräch ist auf einige Probleme gestoßen, keine Panik:
+    \ 1️⃣ Klicken Sie [hier](/#/auth), um den Zugangsschlüssel einzugeben 🔑
+    \ 2️⃣ Wenn Sie Ihre eigenen OpenAI-Ressourcen nutzen möchten, klicken Sie [hier](/#/settings), um die Einstellungen zu ändern ⚙️
+    `
   },
   Auth: {
     Title: "Passwort erforderlich",
@@ -25,10 +22,6 @@ const de: PartialLocaleType = {
     Confirm: "Bestätigen",
     Later: "Später",
     Return: "Zurück",
-    SaasTips:
-      "Die Konfiguration ist zu kompliziert, ich möchte es sofort nutzen",
-    TopTips:
-      "🥳 NextChat AI Einführungsangebot, schalte jetzt OpenAI o1, GPT-4o, Claude-3.5 und die neuesten großen Modelle frei",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} Gespräche`,
