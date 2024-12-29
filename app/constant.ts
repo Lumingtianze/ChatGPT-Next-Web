@@ -623,5 +623,3 @@ export const internalAllowedWebDavEndpoints = [
   "https://webdav.yandex.com",
   "https://app.koofr.net/dav/Koofr",
 ];
-
-export const DEFAULT_GA_ID = "";
