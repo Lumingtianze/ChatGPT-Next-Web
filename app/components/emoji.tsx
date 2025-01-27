@@ -11,6 +11,7 @@ import BlackBotIcon from "../icons/black-bot.svg";
 import GeminiIcon from "../icons/gemini.svg";
 import ClaudeIcon from "../icons/claude.svg";
 import GrokIcon from "../icons/grok.svg";
+import DeepseekIcon from "../icons/deepseek.svg";
 
 export function getEmojiUrl(unified: string, style: EmojiStyle) {
   // Whoever owns this Content Delivery Network (CDN), I am using your CDN to serve emojis
@@ -49,6 +50,8 @@ export function Avatar(props: { model?: ModelType; avatar?: string }) {
           <ClaudeIcon className="user-avatar" />
         ) : props.model?.startsWith("grok") ? (
           <GrokIcon className="user-avatar" />
+        ) : props.model?.startsWith("deepseek") ? (
+          <DeepseekIcon className="user-avatar" />
         ) : (
           <BotIcon className="user-avatar" />
         )}
@@ -72,3 +75,4 @@ export function EmojiAvatar(props: { avatar: string; size?: number }) {
     />
   );
 }
+
