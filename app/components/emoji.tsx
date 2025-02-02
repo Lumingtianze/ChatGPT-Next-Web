@@ -38,19 +38,20 @@ export function AvatarPicker(props: {
 
 export function Avatar(props: { model?: ModelType; avatar?: string }) {
   if (props.model) {
+    const model = props.model.toLowerCase(); // 统一转换为小写
     return (
       <div className="no-dark">
-        {props.model?.startsWith("gpt-4") ||
-        props.model?.startsWith("chatgpt-4o") ||
-        props.model?.startsWith("o1") ? (
+        {model.startsWith("gpt-4") ||
+        model.startsWith("chatgpt-4o") ||
+        model.startsWith("o1") ? (
           <BlackBotIcon className="user-avatar" />
-        ) : props.model?.startsWith("gemini") ? (
+        ) : model.startsWith("gemini") ? (
           <GeminiIcon className="user-avatar" />
-        ) : props.model?.startsWith("claude") ? (
+        ) : model.startsWith("claude") ? (
           <ClaudeIcon className="user-avatar" />
-        ) : props.model?.startsWith("grok") ? (
+        ) : model.startsWith("grok") ? (
           <GrokIcon className="user-avatar" />
-        ) : props.model?.startsWith("deepseek") ? (
+        ) : model.startsWith("deepseek") ? (
           <DeepseekIcon className="user-avatar" />
         ) : (
           <BotIcon className="user-avatar" />
@@ -58,6 +59,7 @@ export function Avatar(props: { model?: ModelType; avatar?: string }) {
       </div>
     );
   }
+
 
   return (
     <div className="user-avatar">
