@@ -43,7 +43,8 @@ export function Avatar(props: { model?: ModelType; avatar?: string }) {
       <div className="no-dark">
         {model.startsWith("gpt-4") ||
         model.startsWith("chatgpt-4o") ||
-        model.startsWith("o1") ? (
+        model.startsWith("o1")  || 
+        model.startsWith("o3") ? (
           <BlackBotIcon className="user-avatar" />
         ) : model.startsWith("gemini") ? (
           <GeminiIcon className="user-avatar" />
